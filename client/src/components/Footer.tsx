@@ -42,19 +42,19 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-0.5 text-blue-400" />
-                <a href="tel:+79991234567" className="text-slate-300 hover:text-white transition-colors">
-                  +7 (999) 123-45-67
+                <a href="tel:+79633201167" className="text-slate-300 hover:text-white transition-colors">
+                  +7 (963) 320-11-67
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-0.5 text-blue-400" />
-                <a href="mailto:info@remont-zbt.ru" className="text-slate-300 hover:text-white transition-colors">
+                <a href="mailto:9633201167@mail.ru" className="text-slate-300 hover:text-white transition-colors">
                   info@remont-zbt.ru
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 text-blue-400" />
-                <span className="text-slate-300">Москва, ул. Примерная, д. 123</span>
+                <span className="text-slate-300">Санкт-Петербург, м. Пионерская</span>
               </li>
             </ul>
           </div>
