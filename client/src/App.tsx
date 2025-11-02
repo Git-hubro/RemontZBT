@@ -16,8 +16,8 @@ function App() {
     <ThemeProvider>
       <ErrorBoundary>
         <TooltipProvider>
-          <Header />
           <Router base={import.meta.env.BASE_URL}>
+            <Header />
             <Switch>
               <Route path="/" component={Home} />
               <Route path="/portfolio" component={Portfolio} />
@@ -25,8 +25,8 @@ function App() {
               <Route path="/contact" component={Contact} />
               <Route component={NotFound} />
             </Switch>
+            <Footer />
           </Router>
-          <Footer />
           <Toaster />
         </TooltipProvider>
       </ErrorBoundary>
