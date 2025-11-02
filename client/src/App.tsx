@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Router, Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Header from "./components/Header";
@@ -11,41 +11,26 @@ import Portfolio from "./pages/Portfolio";
 import ProjectDetail from "./pages/ProjectDetail";
 import Contact from "./pages/Contact";
 
-function Router() {
-  return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-1">
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/portfolio" component={Portfolio} />
-          <Route path="/project/:id" component={ProjectDetail} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/404" component={NotFound} />
-          {/* Final fallback route */}
-          <Route component={NotFound} />
-        </Switch>
-      </main>
-      <Footer />
-    </div>
-  );
-}
-
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
-    <ErrorBoundary>
-      <ThemeProvider defaultTheme="light">
+    <ThemeProvider>
+      <ErrorBoundary>
         <TooltipProvider>
+          <Header />
+          <Router base={import.meta.env.BASE_URL}>
+            <Switch>
+              <Route path="/" component={Home} />
+              <Route path="/portfolio" component={Portfolio} />
+              <Route path="/portfolio/:id" component={ProjectDetail} />
+              <Route path="/contact" component={Contact} />
+              <Route component={NotFound} />
+            </Switch>
+          </Router>
+          <Footer />
           <Toaster />
-          <Router />
         </TooltipProvider>
-      </ThemeProvider>
-    </ErrorBoundary>
+      </ErrorBoundary>
+    </ThemeProvider>
   );
 }
 
