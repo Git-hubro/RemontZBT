@@ -1,13 +1,11 @@
-import { jsxLocPlugin } from "@builder.io/vite-plugin-jsx-loc";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import fs from "node:fs";
 import path from "path";
 import { defineConfig } from "vite";
-import githubPagesSpa from "vite-plugin-github-pages-spa";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), githubPagesSpa()];
+const plugins = [react(), tailwindcss(), vitePluginManusRuntime()];
 
 export default defineConfig({
   base: '/RemontZBT/',
@@ -104,7 +102,6 @@ export default defineConfig({
             }
             return result;
           });
-
           // Also check for attached_assets directory
           if (req.url?.startsWith("/attached_assets/")) {
             const assetPath = path.join(
@@ -116,7 +113,6 @@ export default defineConfig({
               return true;
             }
           }
-
           return shouldBypass;
         },
       },
