@@ -30,7 +30,7 @@ export default function ProjectDetail() {
   const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
-    fetch("/projects.json")
+    fetch(`${import.meta.env.BASE_URL}projects.json`)
       .then((res) => res.json())
       .then((data: Project[]) => {
         const found = data.find((p) => p.id === parseInt(id || "0"));
@@ -56,7 +56,7 @@ export default function ProjectDetail() {
       <div className="min-h-screen flex flex-col items-center justify-center">
         <h1 className="text-2xl font-bold mb-4">Проект не найден</h1>
         <Link href="/portfolio">
-          <Button>Вернуться к портфолио</Button>
+          Вернуться к портфолио
         </Link>
       </div>
     );
@@ -128,8 +128,10 @@ export default function ProjectDetail() {
                 <div className="mt-8">
                   <h3 className="text-lg font-semibold mb-4">Видео проекта</h3>
                   {!showVideo ? (
-                    <div className="bg-slate-900 rounded-lg aspect-video flex items-center justify-center cursor-pointer hover:bg-slate-800 transition-colors"
-                      onClick={() => setShowVideo(true)}>
+                    <div
+                      className="bg-slate-900 rounded-lg aspect-video flex items-center justify-center cursor-pointer hover:bg-slate-800 transition-colors"
+                      onClick={() => setShowVideo(true)}
+                    >
                       <Play className="w-16 h-16 text-white" />
                     </div>
                   ) : (
@@ -161,7 +163,7 @@ export default function ProjectDetail() {
 
             <Card>
               <CardHeader>
-                <CardTitle>Информация о проекте</CardTitle>
+                Информация о проекте
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
@@ -187,7 +189,7 @@ export default function ProjectDetail() {
 
             <Card>
               <CardHeader>
-                <CardTitle>Описание работ</CardTitle>
+                Описание работ
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
@@ -197,7 +199,7 @@ export default function ProjectDetail() {
             </Card>
 
             <Link href="/contact">
-              <Button className="w-full" size="lg">
+              <Button size="lg" className="w-full">
                 Заказать похожий проект
               </Button>
             </Link>
