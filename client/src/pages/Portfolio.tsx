@@ -65,7 +65,7 @@ export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState<string>("Все");
 
   useEffect(() => {
-    fetch("/projects.json")
+    fetch(`${import.meta.env.BASE_URL}projects.json`)
       .then((res) => res.json())
       .then((data) => {
         setProjects(data);
@@ -128,10 +128,10 @@ export default function Portfolio() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProjects.map((project) => (
-                <Link key={project.id} href={`/project/${project.id}`}>
+                <Link href={`/project/${project.id}`} key={project.id}>
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full">
                     <div className="relative h-48 bg-slate-200 overflow-hidden">
-                                              <img
+                      <img
                         src={project.images[project.images.length - 1]?.url || ""}
                         alt={project.title}
                         className="w-full h-full object-cover hover:scale-105 transition-transform"
