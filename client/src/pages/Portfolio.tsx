@@ -34,141 +34,138 @@ const exampleProject: Project = {
     {
       type: "before",
       url: "/assets/studio-baltiyskaya-1-before.jpg",
-      alt: "До ремонта - студия 25 кв.м"
+      alt: "До ремонта - вход"
     },
     {
       type: "after",
       url: "/assets/studio-baltiyskaya-1-after.jpg",
-      alt: "После ремонта - студия 25 кв.м"
+      alt: "После ремонта - кухня"
     }
   ],
   videoUrl: null,
-  cost: "от 800 000 ₽",
-  duration: "45 дней",
-  date: "2024-10-15",
-  fullDescription: "Студия площадью 25 кв.м на м. Балтийская. Проект 'под ключ' включает полный ремонт с черновыми и чистовыми работами, монтаж всех коммуникаций и последующее управление сдачей в аренду.",
+  cost: "500 000 ₽",
+  duration: "3 месяца",
+  date: "2024-01-15",
+  fullDescription: "Студия площадью 25 кв.м была полностью отремонтирована и подготовлена к сдаче в аренду. Проведён комплекс работ от демонтажа до финишной отделки.",
   works: [
-    "Черновая сантехника (прокладка труб канализации, ХВС и ГВС; монтаж коллекторного узла; установка системы защиты от протечек Нептун; монтаж бойлера)",
-    "Черновая электрика (прокладка кабелей ТВ, установка автоматов на бойлер и Нептун; добавлены розетки и выключатели по проекту)",
-    "Малярные работы (заделка всех штроб, штукатурка, шпаклевка, шлифовка стен; проклейка обоев; нанесение декоративной штукатурки)",
-    "Чистовая сантехника (установка всей сантехники в ванной и подключение смесителя на кухне; подключение гейзера)",
-    "Чистовая электрика (монтаж всех розеток и выключателей; установка ночников)",
-    "Монтаж натяжного потолка по всей квартире (монтаж закладных для потолочных встроенных светильников, карниза; подвесных потолочных люстр)",
-    "Отделочные работы (установка двери скрытого монтажа; монтаж плинтуса; установка подоконника; подбор кухни и мебели)",
-    "Подбор арендосъемщика и заключения договора найма жилого помещения"
+    "Демонтажные работы",
+    "Устройство перегородок и выравнивание стен",
+    "Замена электропроводки",
+    "Замена сантехники",
+    "Укладка напольной плитки и ламината",
+    "Установка кухонного гарнитура",
+    "Покраска стен и потолка"
   ]
-}
+};
 
-export default function Portfolio() {
+export function Portfolio() {
+  const [activeCategory, setActiveCategory] = useState<string>("Все проекты");
   const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState<string>("Все");
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}projects.json`)
-      .then((res) => res.json())
-      .then((data) => {
+    async function fetchProjects() {
+      try {
+        setIsLoading(true);
+        const response = await fetch("/api/projects");
+        if (!response.ok) throw new Error("Не удалось загрузить проекты");
+        const data = await response.json();
         setProjects(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error loading projects:", err);
-        setLoading(false);
-      });
+        setError(null);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Ошибка загрузки");
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    fetchProjects();
   }, []);
 
-  const categories = ["Все", ...Array.from(new Set(projects.map((p) => p.category)))];
-  const filteredProjects = selectedCategory === "Все" ? projects : projects.filter((p) => p.category === selectedCategory);
+  const categories = ["Все проекты", "Студии", "1-комнатные", "2-комнатные"];
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="animate-spin w-8 h-8" />
-      </div>
-    );
-  }
+  const filteredProjects =
+    activeCategory === "Все проекты"
+      ? projects
+      : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Портфолио проектов</h1>
-          <p className="text-lg text-slate-200">
-            Примеры выполненных работ по ремонту и отделке помещений
+    <div className="min-h-screen">
+      <div className="container mx-auto px-4 py-8">
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold text-center mb-4">
+            Наши проекты
+          </h1>
+          <p className="text-center text-muted-foreground">
+            Выполненные объекты под ключ с гарантией качества
           </p>
         </div>
-      </section>
 
-      {/* Filters */}
-      <section className="py-8 px-4 border-b">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <Button
-                key={cat}
-                variant={selectedCategory === cat ? "default" : "outline"}
-                onClick={() => setSelectedCategory(cat)}
-                className="rounded-full"
-              >
-                {cat}
-              </Button>
-            ))}
-          </div>
+        <div className="flex flex-wrap gap-2 justify-center mb-8">
+          {categories.map((category) => (
+            <Button
+              key={category}
+              variant={activeCategory === category ? "default" : "outline"}
+              onClick={() => setActiveCategory(category)}
+            >
+              {category}
+            </Button>
+          ))}
         </div>
-      </section>
 
-      {/* Projects Grid */}
-      <section className="py-12 px-4">
-        <div className="max-w-6xl mx-auto">
-          {filteredProjects.length === 0 ? (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground text-lg">Проектов не найдено</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProjects.map((project) => (
-                <Link href={`/project/${project.id}`} key={project.id}>
-                  <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full">
-                    <div className="relative h-48 bg-slate-200 overflow-hidden">
-                      <img
-                        src={project.images[project.images.length - 1]?.url || ""}
-                        alt={project.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform"
-                      />
-                      <div className="absolute top-3 right-3 bg-primary text-white px-3 py-1 rounded-full text-sm">
-                        {project.category}
+        {isLoading ? (
+          <div className="flex justify-center items-center min-h-[400px]">
+            <Loader2 className="w-8 h-8 animate-spin text-primary" />
+          </div>
+        ) : error ? (
+          <div className="text-center text-red-500 min-h-[400px] flex items-center justify-center">
+            <p>{error}</p>
+          </div>
+        ) : filteredProjects.length === 0 ? (
+          <div className="text-center text-muted-foreground min-h-[400px] flex items-center justify-center">
+            <p>Проектов пока нет</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredProjects.map((project) => (
+              <Link href={`/portfolio/${project.id}`} key={project.id}>
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full">
+                  <div className="aspect-video relative overflow-hidden">
+                    <img
+                      src={project.images[0]?.url || "/placeholder.jpg"}
+                      alt={project.images[0]?.alt || project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="line-clamp-2">{project.title}</CardTitle>
+                    <CardDescription>{project.category}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+                      {project.description}
+                    </p>
+                    <div className="space-y-2">
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Стоимость:</span>
+                        <span className="font-semibold">{project.cost}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Сроки:</span>
+                        <span className="font-semibold">{project.duration}</span>
                       </div>
                     </div>
-                    <CardHeader>
-                      <CardTitle className="line-clamp-2">{project.title}</CardTitle>
-                      <CardDescription className="line-clamp-2">
-                        {project.description}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-2 text-sm mb-4">
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground">Стоимость:</span>
-                          <span className="font-semibold">{project.cost}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground">Сроки:</span>
-                          <span className="font-semibold">{project.duration}</span>
-                        </div>
-                      </div>
-                      <Button variant="ghost" className="w-full justify-between group">
-                        Подробнее
-                        <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+                    <Button variant="ghost" className="w-full justify-between group">
+                      Подробнее
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
