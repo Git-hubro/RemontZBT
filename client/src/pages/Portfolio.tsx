@@ -59,7 +59,6 @@ const exampleProject: Project = {
   ]
 }
 
-
 export default function Portfolio() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
@@ -69,7 +68,7 @@ export default function Portfolio() {
     fetch("/projects.json")
       .then((res) => res.json())
       .then((data) => {
-        setProjects(data);
+        setProjects(data.projects);
         setLoading(false);
       })
       .catch((err) => {
