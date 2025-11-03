@@ -58,7 +58,7 @@ const exampleProject: Project = {
   ]
 };
 
-export function Portfolio() {
+export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState<string>("Все проекты");
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
