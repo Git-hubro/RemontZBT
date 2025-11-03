@@ -25,7 +25,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/projects.json")
+    fetch(`${import.meta.env.BASE_URL}projects.json`)
       .then((res) => res.json())
       .then((data) => {
         setProjects(data.slice(0, 3));
@@ -57,6 +57,7 @@ export default function Home() {
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>
+
                 <Link href="/contact">
                   <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-slate-900">
                     Заказать консультацию
@@ -81,7 +82,7 @@ export default function Home() {
             <Card>
               <CardHeader>
                 <Clock className="w-8 h-8 text-primary mb-2" />
-                <CardTitle>Точные сроки</CardTitle>
+                Точные сроки
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
@@ -89,11 +90,10 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
-
             <Card>
               <CardHeader>
                 <DollarSign className="w-8 h-8 text-primary mb-2" />
-                <CardTitle>Честные цены</CardTitle>
+                Честные цены
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
@@ -101,11 +101,10 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
-
             <Card>
               <CardHeader>
                 <Hammer className="w-8 h-8 text-primary mb-2" />
-                <CardTitle>Качество работ</CardTitle>
+                Качество работ
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
@@ -129,7 +128,6 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-
           {loading ? (
             <div className="text-center py-12">
               <p className="text-muted-foreground">Загрузка проектов...</p>
@@ -137,7 +135,7 @@ export default function Home() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {projects.map((project) => (
-                <Link key={project.id} href={`/project/${project.id}`}>
+                <Link href={`/project/${project.id}`} key={project.id}>
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full">
                     <div className="relative h-48 bg-slate-200 overflow-hidden">
                       <img
