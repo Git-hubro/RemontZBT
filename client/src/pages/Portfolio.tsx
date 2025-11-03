@@ -68,7 +68,7 @@ export default function Portfolio() {
     fetch("/projects.json")
       .then((res) => res.json())
       .then((data) => {
-        setProjects(data.projects);
+        setProjects(data);
         setLoading(false);
       })
       .catch((err) => {
@@ -131,7 +131,7 @@ export default function Portfolio() {
                 <Link key={project.id} href={`/project/${project.id}`}>
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full">
                     <div className="relative h-48 bg-slate-200 overflow-hidden">
-                      <img
+                                              <img
                         src={project.images[project.images.length - 1]?.url || ""}
                         alt={project.title}
                         className="w-full h-full object-cover hover:scale-105 transition-transform"
