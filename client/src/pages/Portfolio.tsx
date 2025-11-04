@@ -91,7 +91,7 @@ export default function Portfolio() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProjects.map((project) => (
-                <Link key={project.id} href={`/project/${project.id}`}>
+                <Link key={project.id} href={`/portfolio/${project.id}`}>
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full">
                     <div className="relative h-48 bg-slate-200 overflow-hidden">
                       <img
