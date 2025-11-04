@@ -57,7 +57,6 @@ export default function Home() {
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>
-
                 <Link href="/contact">
                   <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-slate-900">
                     Заказать консультацию
@@ -135,7 +134,7 @@ export default function Home() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {projects.map((project) => (
-                <Link href={`/project/${project.id}`} key={project.id}>
+                <Link href={`/portfolio/${project.id}`} key={project.id}>
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full">
                     <div className="relative h-48 bg-slate-200 overflow-hidden">
                       <img
