@@ -67,7 +67,7 @@ export default function Home() {
             <div className="hidden lg:block">
               <div className="rounded-lg aspect-square overflow-hidden">
                 <img
-                  src="https://disk.yandex.ru/i/XOpV9SpX65rifg"
+                  src="https://drive.google.com/file/u/0/d/17TBrzHpIup_y7WZsjprNSAux7SfT45Cc/view?usp=drivesdk&pli=1"
                   alt="Профессиональный ремонт"
                   className="w-full h-full object-cover"
                 />
