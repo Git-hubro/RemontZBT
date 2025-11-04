@@ -11,6 +11,18 @@ interface ProjectImage {
 }
 
 interface Project {
+
+// Adding a test project to the Portfolio component
+const testProject = {
+  name: 'Тестовый проект',
+  description: 'Описание тестового проекта',
+  cost: '1000',
+  duration: '1 месяц'
+};
+
+// Assuming there is an array named 'projects' in the Portfolio component
+projects.push(testProject);
+
   id: number;
   title: string;
   category: string;
