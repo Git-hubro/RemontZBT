@@ -1,1 +1,1 @@
-Removed unexpected '-' from line 168
+Removed the '-' symbol from line 168
