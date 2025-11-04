@@ -20,43 +20,9 @@ interface Project {
   cost: string;
   duration: string;
   date: string;
-  fullDescription: string;  // ← ДОБАВЛЕНО (для полного описания проекта)
-  works: string[];          // ← ДОБАВЛЕНО (для списка выполненных работ)
+  fullDescription: string;
+  works: string[];
 }
-
-// Пример реального объекта с вашими данными:
-const exampleProject: Project = {
-  id: 1,
-  title: "Студия 25 кв.м (м. Балтийская) - Проект 1",
-  category: "Студии",
-  description: "Полный ремонт и сдача в аренду под ключ. Выполнены черновые и чистовые работы, монтаж всех коммуникаций.",
-  images: [
-    {
-      type: "before",
-      url: "/assets/studio-baltiyskaya-1-before.jpg",
-      alt: "До ремонта - вход"
-    },
-    {
-      type: "after",
-      url: "/assets/studio-baltiyskaya-1-after.jpg",
-      alt: "После ремонта - кухня"
-    }
-  ],
-  videoUrl: null,
-  cost: "500 000 ₽",
-  duration: "3 месяца",
-  date: "2024-01-15",
-  fullDescription: "Студия площадью 25 кв.м была полностью отремонтирована и подготовлена к сдаче в аренду. Проведён комплекс работ от демонтажа до финишной отделки.",
-  works: [
-    "Демонтажные работы",
-    "Устройство перегородок и выравнивание стен",
-    "Замена электропроводки",
-    "Замена сантехники",
-    "Укладка напольной плитки и ламината",
-    "Установка кухонного гарнитура",
-    "Покраска стен и потолка"
-  ]
-};
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState<string>("Все проекты");
@@ -68,7 +34,7 @@ export default function Portfolio() {
     async function fetchProjects() {
       try {
         setIsLoading(true);
-        const response = await fetch("/api/projects");
+        const response = await fetch("/projects.json");
         if (!response.ok) throw new Error("Не удалось загрузить проекты");
         const data = await response.json();
         setProjects(data);
@@ -83,7 +49,6 @@ export default function Portfolio() {
   }, []);
 
   const categories = ["Все проекты", "Студии", "1-комнатные", "2-комнатные"];
-
   const filteredProjects =
     activeCategory === "Все проекты"
       ? projects
@@ -119,11 +84,11 @@ export default function Portfolio() {
           </div>
         ) : error ? (
           <div className="text-center text-red-500 min-h-[400px] flex items-center justify-center">
-            <p>{error}</p>
+            {error}
           </div>
         ) : filteredProjects.length === 0 ? (
           <div className="text-center text-muted-foreground min-h-[400px] flex items-center justify-center">
-            <p>Проектов пока нет</p>
+            Проектов пока нет
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -155,7 +120,7 @@ export default function Portfolio() {
                         <span className="font-semibold">{project.duration}</span>
                       </div>
                     </div>
-                    <Button variant="ghost" className="w-full justify-between group">
+                    <Button className="w-full justify-between group" variant="ghost">
                       Подробнее
                       <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
