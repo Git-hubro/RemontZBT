@@ -64,16 +64,15 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-<div className="hidden lg:block">
-  <div className="rounded-lg aspect-square overflow-hidden">
-    <img
-      src="https://disk.yandex.ru/i/XOpV9SpX65rifg"
-      alt="Ваш ремонт"
-      className="w-full h-full object-cover"
-    />
-  </div>
-</div>
-
+            <div className="hidden lg:block">
+              <div className="rounded-lg aspect-square overflow-hidden">
+                <img
+                  src="https://disk.yandex.ru/i/XOpV9SpX65rifg"
+                  alt="Профессиональный ремонт"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
