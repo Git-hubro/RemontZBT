@@ -64,11 +64,16 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="hidden lg:block">
-              <div className="bg-gradient-to-br from-slate-700 to-slate-600 rounded-lg aspect-square flex items-center justify-center">
-                <Hammer className="w-32 h-32 text-slate-400" />
-              </div>
-            </div>
+<div className="hidden lg:block">
+  <div className="rounded-lg aspect-square overflow-hidden">
+    <img
+      src="https://disk.yandex.ru/i/XOpV9SpX65rifg"
+      alt="Ваш ремонт"
+      className="w-full h-full object-cover"
+    />
+  </div>
+</div>
+
           </div>
         </div>
       </section>
