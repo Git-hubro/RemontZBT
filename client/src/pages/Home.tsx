@@ -73,48 +73,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 px-4 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center">Почему выбирают нас</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card>
-              <CardHeader>
-                <Clock className="w-8 h-8 text-primary mb-2" />
-                Точные сроки
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Мы уважаем ваше время и всегда придерживаемся согласованного графика работ.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <DollarSign className="w-8 h-8 text-primary mb-2" />
-                Честные цены
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Прозрачное ценообразование без скрытых расходов. Смета согласуется заранее.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <Hammer className="w-8 h-8 text-primary mb-2" />
-                Качество работ
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Используем только качественные материалы и современные технологии отделки.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Featured Projects Section */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
@@ -169,6 +127,48 @@ export default function Home() {
               ))}
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 px-4 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold mb-12 text-center">Почему выбирают нас</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card>
+              <CardHeader>
+                <Clock className="w-8 h-8 text-primary mb-2" />
+                Точные сроки
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Мы уважаем ваше время и всегда придерживаемся согласованного графика работ.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <DollarSign className="w-8 h-8 text-primary mb-2" />
+                Честные цены
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Прозрачное ценообразование без скрытых расходов. Смета согласуется заранее.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <Hammer className="w-8 h-8 text-primary mb-2" />
+                Качество работ
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Используем только качественные материалы и современные технологии отделки.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
