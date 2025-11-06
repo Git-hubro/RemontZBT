@@ -5,18 +5,44 @@
     "category": "Студии",
     "description": "Полный ремонт кухни с заменой всей сантехники, электрики и отделки. Установлены новые шкафы, столешница и встроенная техника.",
     "images": [
-      {
-        "type": "before",
-        "url": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
-        "alt": "До ремонта"
-      },
-      {
-        "type": "after",
-        "url": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
-        "alt": "После ремонта"
-      }
+      { "type": "before", "url": "https://placehold.co/800x600?text=Фото+1", "alt": "Фото 1" },
+      { "type": "after", "url": "https://placehold.co/800x600?text=Фото+2", "alt": "Фото 2" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+3", "alt": "Фото 3" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+4", "alt": "Фото 4" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+5", "alt": "Фото 5" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+6", "alt": "Фото 6" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+7", "alt": "Фото 7" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+8", "alt": "Фото 8" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+9", "alt": "Фото 9" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+10", "alt": "Фото 10" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+11", "alt": "Фото 11" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+12", "alt": "Фото 12" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+13", "alt": "Фото 13" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+14", "alt": "Фото 14" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+15", "alt": "Фото 15" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+16", "alt": "Фото 16" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+17", "alt": "Фото 17" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+18", "alt": "Фото 18" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+19", "alt": "Фото 19" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+20", "alt": "Фото 20" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+21", "alt": "Фото 21" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+22", "alt": "Фото 22" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+23", "alt": "Фото 23" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+24", "alt": "Фото 24" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+25", "alt": "Фото 25" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+26", "alt": "Фото 26" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+27", "alt": "Фото 27" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+28", "alt": "Фото 28" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+29", "alt": "Фото 29" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+30", "alt": "Фото 30" }
     ],
-    "videoUrl": null,
+    "videos": [
+      { "url": "https://www.w3schools.com/html/mov_bbb.mp4", "alt": "Видео 1" },
+      { "url": "https://www.w3schools.com/html/movie.mp4", "alt": "Видео 2" },
+      { "url": "https://www.w3schools.com/html/mov_bbb.mp4", "alt": "Видео 3" },
+      { "url": "https://www.w3schools.com/html/movie.mp4", "alt": "Видео 4" },
+      { "url": "https://www.w3schools.com/html/mov_bbb.mp4", "alt": "Видео 5" }
+    ],
     "cost": "450,000 ₽",
     "duration": "3 недели",
     "date": "2024-10-15"
@@ -27,40 +53,92 @@
     "category": "Студии",
     "description": "Капитальный ремонт ванной комнаты с полной заменой плитки, сантехники и установкой современного душевого уголка.",
     "images": [
-      {
-        "type": "before",
-        "url": "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=600&fit=crop",
-        "alt": "До ремонта"
-      },
-      {
-        "type": "after",
-        "url": "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=600&fit=crop",
-        "alt": "После ремонта"
-      }
+      { "type": "before", "url": "https://placehold.co/800x600?text=Фото+1", "alt": "Фото 1" },
+      { "type": "after", "url": "https://placehold.co/800x600?text=Фото+2", "alt": "Фото 2" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+3", "alt": "Фото 3" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+4", "alt": "Фото 4" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+5", "alt": "Фото 5" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+6", "alt": "Фото 6" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+7", "alt": "Фото 7" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+8", "alt": "Фото 8" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+9", "alt": "Фото 9" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+10", "alt": "Фото 10" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+11", "alt": "Фото 11" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+12", "alt": "Фото 12" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+13", "alt": "Фото 13" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+14", "alt": "Фото 14" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+15", "alt": "Фото 15" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+16", "alt": "Фото 16" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+17", "alt": "Фото 17" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+18", "alt": "Фото 18" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+19", "alt": "Фото 19" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+20", "alt": "Фото 20" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+21", "alt": "Фото 21" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+22", "alt": "Фото 22" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+23", "alt": "Фото 23" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+24", "alt": "Фото 24" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+25", "alt": "Фото 25" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+26", "alt": "Фото 26" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+27", "alt": "Фото 27" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+28", "alt": "Фото 28" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+29", "alt": "Фото 29" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+30", "alt": "Фото 30" }
     ],
-    "videoUrl": null,
+    "videos": [
+      { "url": "https://www.w3schools.com/html/mov_bbb.mp4", "alt": "Видео 1" },
+      { "url": "https://www.w3schools.com/html/movie.mp4", "alt": "Видео 2" },
+      { "url": "https://www.w3schools.com/html/mov_bbb.mp4", "alt": "Видео 3" },
+      { "url": "https://www.w3schools.com/html/movie.mp4", "alt": "Видео 4" },
+      { "url": "https://www.w3schools.com/html/mov_bbb.mp4", "alt": "Видео 5" }
+    ],
     "cost": "280,000 ₽",
     "duration": "2 недели",
     "date": "2024-09-20"
-  }, 
-{
+  },
+  {
     "id": 3,
     "title": "тестовый ремонт Балтов",
     "category": "Ремонт",
     "description": "краткое описание похоже тут",
     "images": [
-      {
-        "type": "before",
-        "url": "https://i.postimg.cc/76KjQ2tv/IMG-1943.jpg",
-        "alt": "До ремонта"
-      },
-      {
-        "type": "after",
-        "url": "https://i.postimg.cc/J7J2kSm2/IMG-7359.jpg",
-        "alt": "После ремонта"
-      }
+      { "type": "before", "url": "https://i.postimg.cc/76KjQ2tv/IMG-1943.jpg", "alt": "Фото 1" },
+      { "type": "after", "url": "https://i.postimg.cc/J7J2kSm2/IMG-7359.jpg", "alt": "Фото 2" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+3", "alt": "Фото 3" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+4", "alt": "Фото 4" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+5", "alt": "Фото 5" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+6", "alt": "Фото 6" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+7", "alt": "Фото 7" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+8", "alt": "Фото 8" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+9", "alt": "Фото 9" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+10", "alt": "Фото 10" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+11", "alt": "Фото 11" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+12", "alt": "Фото 12" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+13", "alt": "Фото 13" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+14", "alt": "Фото 14" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+15", "alt": "Фото 15" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+16", "alt": "Фото 16" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+17", "alt": "Фото 17" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+18", "alt": "Фото 18" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+19", "alt": "Фото 19" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+20", "alt": "Фото 20" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+21", "alt": "Фото 21" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+22", "alt": "Фото 22" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+23", "alt": "Фото 23" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+24", "alt": "Фото 24" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+25", "alt": "Фото 25" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+26", "alt": "Фото 26" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+27", "alt": "Фото 27" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+28", "alt": "Фото 28" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+29", "alt": "Фото 29" },
+      { "type": "other", "url": "https://placehold.co/800x600?text=Фото+30", "alt": "Фото 30" }
     ],
-    "videoUrl": null,
+    "videos": [
+      { "url": "https://www.w3schools.com/html/mov_bbb.mp4", "alt": "Видео 1" },
+      { "url": "https://www.w3schools.com/html/movie.mp4", "alt": "Видео 2" },
+      { "url": "https://www.w3schools.com/html/mov_bbb.mp4", "alt": "Видео 3" },
+      { "url": "https://www.w3schools.com/html/movie.mp4", "alt": "Видео 4" },
+      { "url": "https://www.w3schools.com/html/mov_bbb.mp4", "alt": "Видео 5" }
+    ],
     "cost": "100 Р",
     "duration": "срок 5 недель",
     "date": "2025-05-05"
