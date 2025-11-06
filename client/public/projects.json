@@ -134,10 +134,10 @@
     ],
     "videos": [
       { "url": "https://youtu.be/VhB1iTS6BSc?si=4PC4X2MOcFYSjJwd", "alt": "Видео 1" },
-      { "url": "https://www.w3schools.com/html/movie.mp4", "alt": "Видео 2" },
-      { "url": "https://www.w3schools.com/html/mov_bbb.mp4", "alt": "Видео 3" },
-      { "url": "https://www.w3schools.com/html/movie.mp4", "alt": "Видео 4" },
-      { "url": "https://www.w3schools.com/html/mov_bbb.mp4", "alt": "Видео 5" }
+      { "url": "Null", "alt": "Видео 2" },
+      { "url": "Null", "alt": "Видео 3" },
+      { "url": "Null", "alt": "Видео 4" },
+      { "url": "Null", "alt": "Видео 5" }
     ],
     "cost": "100 Р",
     "duration": "срок 5 недель",
