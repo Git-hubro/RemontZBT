@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -12,6 +13,14 @@ import ProjectDetail from "./pages/ProjectDetail";
 import Contact from "./pages/Contact";
 
 function App() {
+  useEffect(() => {
+    const l = window.location;
+    if (l.search[1] === '/') {
+      const decoded = l.search.slice(1).split('&').map(s => s.replace(/~and~/g, '&')).join('?');
+      window.history.replaceState(null, '', l.pathname.slice(0, -1) + decoded + l.hash);
+    }
+  }, []);
+
   return (
     <ThemeProvider>
       <ErrorBoundary>
